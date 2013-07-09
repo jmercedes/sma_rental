@@ -46,6 +46,9 @@ GIT
 PATH
   remote: vendor/extensions
   specs:
+    refinerycms-contacts (1.0)
+      refinerycms-core (~> 2.0.10)
+      refinerycms-settings (~> 2.0.0)
     refinerycms-properties (1.0)
       refinerycms-core (~> 2.0.10)
 
@@ -93,6 +96,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    country-select (1.1.1)
     devise (2.0.5)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -156,6 +160,8 @@ GEM
       routing-filter (>= 0.2.3)
     refinerycms-page-images (2.0.1)
       refinerycms-pages (~> 2.0.0)
+    refinerycms-settings (2.0.2)
+      refinerycms-core (~> 2.0.1)
     routing-filter (0.3.1)
       actionpack
     sass (3.2.9)
@@ -195,9 +201,11 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  country-select
   jquery-rails (~> 2.0.0)
   rails (= 3.2.13)
   refinerycms (~> 2.0.0)!
+  refinerycms-contacts!
   refinerycms-i18n (~> 2.0.0)
   refinerycms-page-images (~> 2.0.0)
   refinerycms-properties!

@@ -1,0 +1,29 @@
+<%= t('.greeting') %>,<br/>
+<br/>
+<%= t('.you_recieved_new_contact') %><br/>
+<br/>
+<%= t('.contact_starts') %><br/>
+<br/>
+<%= t('.name', :default => t('activerecord.attributes.contact.name')) %>: <%= @contact.name %><br/>
+<%= t('.lastname', :default => t('activerecord.attributes.contact.lastname')) %>: <%= @contact.lastname %><br/>
+<%= t('.company', :default => t('activerecord.attributes.contact.company')) %>: <%= @contact.company %><br/>
+<%= t('.email', :default => t('activerecord.attributes.contact.email')) %>: <%= @contact.email %><br/>
+<%= t('.phone', :default => t('activerecord.attributes.contact.phone')) %>: <%= @contact.phone %><br/>
+<%= t('.prefered_contact', :default => t('activerecord.attributes.contact.prefered_contact')) %>: <%= @contact.prefered_contact %><br/>
+<%= t('.address', :default => t('activerecord.attributes.contact.address')) %>: <%= @contact.address %><br/>
+<%= t('.address_2', :default => t('activerecord.attributes.contact.address_2')) %>: <%= @contact.address_2 %><br/>
+<%= t('.state', :default => t('activerecord.attributes.contact.state')) %>: <%= @contact.state %><br/>
+<%= t('.city', :default => t('activerecord.attributes.contact.city')) %>: <%= @contact.city %><br/>
+<%= t('.zip_code', :default => t('activerecord.attributes.contact.zip_code')) %>: <%= @contact.zip_code %><br/>
+<%= t('.country', :default => t('activerecord.attributes.contact.country')) %>: <%= @contact.country %><br/>
+<%= t('.looking', :default => t('activerecord.attributes.contact.looking')) %>: <%= @contact.looking %><br/>
+<%= t('.budget', :default => t('activerecord.attributes.contact.budget')) %>: <%= @contact.budget %><br/>
+<%= t('.comments', :default => t('activerecord.attributes.contact.comments')) %>: 
+<%= @contact.comments %>
+<br/>
+<%= t('.contact_ends') %><br/>
+<br/>
+<%= t('.closing_line') %>,<br/>
+<%= Refinery::Core.site_name %><br/>
+<br/>
+<%= t('.ps_html') %>

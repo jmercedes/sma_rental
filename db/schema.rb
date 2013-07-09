@@ -11,7 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130709160520) do
+ActiveRecord::Schema.define(:version => 20130709192720) do
+
+  create_table "refinery_contacts", :force => true do |t|
+    t.string   "name"
+    t.string   "lastname"
+    t.string   "company"
+    t.string   "email"
+    t.string   "phone"
+    t.boolean  "prefered_contact"
+    t.string   "address"
+    t.string   "address_2"
+    t.string   "state"
+    t.string   "city"
+    t.string   "zip_code"
+    t.string   "country"
+    t.string   "looking"
+    t.integer  "budget"
+    t.text     "comments"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "refinery_contacts", ["id"], :name => "index_refinery_contacts_on_id"
 
   create_table "refinery_image_page_translations", :force => true do |t|
     t.integer  "refinery_image_page_id"
@@ -144,6 +166,19 @@ ActiveRecord::Schema.define(:version => 20130709160520) do
 
   add_index "refinery_roles_users", ["role_id", "user_id"], :name => "index_refinery_roles_users_on_role_id_and_user_id"
   add_index "refinery_roles_users", ["user_id", "role_id"], :name => "index_refinery_roles_users_on_user_id_and_role_id"
+
+  create_table "refinery_settings", :force => true do |t|
+    t.string   "name"
+    t.text     "value"
+    t.boolean  "destroyable",     :default => true
+    t.string   "scoping"
+    t.boolean  "restricted",      :default => false
+    t.string   "form_value_type"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
+
+  add_index "refinery_settings", ["name"], :name => "index_refinery_settings_on_name"
 
   create_table "refinery_user_plugins", :force => true do |t|
     t.integer "user_id"

@@ -11,3 +11,5 @@ Refinery::Pages::Engine.load_seed
 
 # Added by Refinery CMS Properties extension
 Refinery::Properties::Engine.load_seed
+
+Refinery::Contacts::Engine.load_seed

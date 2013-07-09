@@ -1,0 +1,162 @@
+<div class="span3">
+	<%= raw @page.content_for(:side_body) %>
+</div>
+
+<div class="span9">
+	
+	<!-- Headings &amp; Paragraph Copy -->
+	<div class="row">
+		
+		
+		<div class="span9">
+			<div class="page-header">
+				<h1><%= @page.title %></h1>
+			</div>
+			
+			<%=raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) %>
+
+	    <%= form_for [refinery, :contacts, @contact] do |f| %>
+	      <%= render '/refinery/admin/error_messages',
+	                 :object => @contact,
+	                 :include_object_name => true  %>
+
+				<div class="span4">
+	        <%= f.required_label :name %>
+	        <%= f.text_field :name, :class => 'span4' %>
+
+				</div>
+
+	      <div class='span4'>
+	        <%= f.label :lastname %>
+	        <%= f.text_field :lastname, :class => 'span4' %>
+	      </div>
+
+	      <div class='span6'>
+	        <%= f.label :email %>
+	        <%= f.text_field :email, :class => 'span6' %>
+	      </div>
+
+	      <div class='span3'>
+	        <%= f.label :phone %>
+	        <%= f.text_field :phone, :class => 'span3' %>
+	      </div>
+
+
+	      <div class='span4'>
+	        <%= f.label :company %>
+	        <%= f.text_field :company, :class => 'span4' %>
+	      </div>
+
+				<div class="span4">
+					<%= f.label :prefered_contact %>
+					<%= select_tag :prefered_contact,
+							options_for_select([ "Phone", "Email"], "Email"), :class => "span4" %>
+				</div> 
+
+
+	      <div class='span4'>
+	        <%= f.label :looking %>
+					<%= select_tag :looking,
+							options_for_select([ "Condo", "Villa", "Loft", "Bungalow"], "Condo"), :class => "span4" %>
+	      </div>
+
+
+	      <div class='span4'>
+	        <%= f.label :budget %>
+	        <%= f.text_field :budget %>
+	      </div>
+
+	  		<div class="clearfix"></div>
+				<div class="span12">
+	       <h2>Address</h2>
+				</div>
+				 <hr> 
+	      <div class='span4'>
+	        <%= f.label :address %>
+	        <%= f.text_field :address, :class => 'span4' %>
+	      </div>
+
+	      <div class='span4'>
+	        <%= f.label :address_2 %>
+	        <%= f.text_field :address_2, :class => 'span4' %>
+	      </div>
+
+	      <div class='span3'>
+	        <%= f.label :city %>
+	        <%= f.text_field :city, :class => 'span3' %>
+	      </div>
+
+
+	      <div class='span4'>
+	        <%= f.label :state %>
+	        <%= f.text_field :state, :class => 'span4' %>
+	      </div>
+
+
+	      <div class='span2'>
+	        <%= f.label :zip_code %>
+	        <%= f.text_field :zip_code, :class => 'span2' %>
+	      </div>
+
+				<div class="span4">
+					<%= f.label :country %>
+					<%= country_select(:country, "country_name", ["United States"], :class => "span4") %>
+				</div>
+
+	      <div class='span9'>
+	        <%= f.label :comments %>
+	        <%= f.text_area :comments, :rows => 8, :class => 'span9' %>
+	      </div>
+
+	      <div class='span4 actions'>
+	        <%= f.submit t('.send'), :class => 'btn btn-large' %>
+	      </div>
+	    <% end %>
+	    
+			<form class="form-horizontal">
+				<fieldset>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non egestas massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus auctor, urna a pretium aliquam, enim tellus convallis dolor, eget semper sem risus placerat tortor.</p><br />
+					<div class="control-group">
+						<label for="focusedInput" class="control-label">First Name:</label>
+						<div class="controls">
+							<input type="text" placeholder="your first name" id="focusedInput" class="input-xlarge focused span6">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">E-Mail Address:</label>
+						<div class="controls">
+							<input type="text" placeholder="your email" class="input-xlarge span6">
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="textarea" class="control-label">Enquiry:</label>
+						<div class="controls">
+							<textarea rows="3" id="textarea"  placeholder="What would you like to contact us about?" class="input-xlarge span6"></textarea>
+						</div>
+					</div>
+					
+					<div class="span8">
+						<button class="btn btn-primary pull-right" style="margin-right: 20px;" type="submit">Continue</button>
+					</div>
+				</fieldset>
+			</form>
+			
+		</div>
+		
+		
+		
+		<!-- Misc Elements -->
+		
+	</div><!-- /row -->
+	
+</div>
+
+
+
+
+  <div class='row'>
+	<div class="span12">
+		
+	</div>
+ 
+ </div>

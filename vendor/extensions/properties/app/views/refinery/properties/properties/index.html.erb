@@ -1,11 +1,49 @@
-<% content_for :body do %>
-  <ul id="properties">
-    <% @properties.each do |property| %>
-      <li>
-        <%= link_to property.name, refinery.properties_property_path(property) %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+<div class="row">
+	<div class="span4">
+		
+		
+ </div>
+	
+	<div class="span8">	
 
-<%= render '/refinery/content_page' %>
+	  <% @properties.each do |property| %>
+				<div class="row ">
+					<div class="span2">
+						<%= image_fu property.img_1 %>
+						<h6>Bedrooms: 6</h6>
+						<h6>Days on site: 4</h6>
+						<h6>Sqft: 2,325</h6>
+			</div>	 
+			<div class="span6">
+				<h3><%= link_to property.name, refinery.properties_property_path(property) %></h3>
+				<%= raw property.description %>
+			</div>
+		</div>
+		<hr />
+		<% end %>
+			  	
+				
+		
+		
+		<div class="pagination">
+			<ul>
+				<li><a href="#">Prev</a></li>
+				<li class="active">
+					<a href="#">1</a>
+				</li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#">6</a></li>
+				<li><a href="#">7</a></li>
+				<li><a href="#">8</a></li>
+				<li><a href="#">9</a></li>
+				<li><a href="#">10</a></li>
+				<li><a href="#">Next</a></li>
+			</ul>
+		</div>
+		
+	</div>
+	
+</div>
