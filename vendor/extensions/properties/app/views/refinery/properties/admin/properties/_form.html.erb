@@ -1,0 +1,84 @@
+<%= form_for [refinery, :properties_admin, @property] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @property,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:description],
+                :object => "properties/property" -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :img_1 -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :img_1_id,
+               :image => @property.img_1,
+               :toggle_image_display => false -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :img_2 -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :img_2_id,
+               :image => @property.img_2,
+               :toggle_image_display => false -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :img_3 -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :img_3_id,
+               :image => @property.img_3,
+               :toggle_image_display => false -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :img_4 -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :img_4_id,
+               :image => @property.img_4,
+               :toggle_image_display => false -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :img_5 -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :img_5_id,
+               :image => @property.img_5,
+               :toggle_image_display => false -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :img_6 -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :img_6_id,
+               :image => @property.img_6,
+               :toggle_image_display => false -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.properties.admin.properties.property'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @property.name) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>
